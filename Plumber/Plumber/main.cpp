@@ -30,7 +30,7 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 		DispatchMessage(&msg);
 	}
 	delete mainDialog;
-	return NULL;
+	return msg.wParam;
 }
 
 
