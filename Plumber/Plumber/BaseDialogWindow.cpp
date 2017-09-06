@@ -1,6 +1,6 @@
 #include "BaseDialogWindow.h"
 
-namespace CourseWork_WinApi
+namespace Plumber
 {
 	BaseDialogWindow::~BaseDialogWindow()
 	{

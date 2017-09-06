@@ -13,7 +13,7 @@ typedef std::wstring tString;
 #endif
 
 
-namespace CourseWork_WinApi
+namespace Plumber
 {
 	class BaseDialogWindow
 	{

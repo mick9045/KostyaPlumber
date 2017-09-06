@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <tchar.h>
-
+#include "MainWindow.h"
 
 #include <CommCtrl.h>
 
@@ -13,8 +13,12 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 	EnableCommonControls();
 	MSG msg;
 
+	auto mainDialog = new Plumber::MainWindow();
+	HWND hMainWindow = mainDialog->Create();
+
 	while (GetMessage(&msg, NULL, NULL, NULL))
 	{
+
 		/*
 		if (!IsDialogMessage(hMainWindow, &msg))
 		{
@@ -25,6 +29,7 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
+	delete mainDialog;
 	return NULL;
 }
 
