@@ -23,7 +23,7 @@ namespace Plumber
 	{
 		switch (uMsg)
 		{
-			HANDLE_WM_CLOSE(hwnd, wParam, lParam, Cls_OnClose);	
+			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);	
 		}
 		return FALSE;
 	}
