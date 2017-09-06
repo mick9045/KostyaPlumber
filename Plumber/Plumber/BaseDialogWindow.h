@@ -1,17 +1,9 @@
 #pragma once
 #include <windows.h>
 #include <CommCtrl.h>
-#include <string>
+#include "Types.h"
+
 //#include "resource.h"
-
-#ifndef UNICODE  
-typedef std::string tString;
-#define to_tstring std::to_string
-#else
-typedef std::wstring tString;
-#define to_tstring std::to_wstring
-#endif
-
 
 namespace Plumber
 {

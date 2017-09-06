@@ -154,6 +154,7 @@
     <ClInclude Include="BaseDialogWindow.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plumber.rc" />
