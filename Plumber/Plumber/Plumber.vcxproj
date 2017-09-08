@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -152,6 +152,7 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="StraightPipe.cpp" />
     <ClCompile Include="tubeCollection.cpp" />
     <ClCompile Include="TubeView.cpp" />
   </ItemGroup>
@@ -162,6 +163,7 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="StraightPipe.h" />
     <ClInclude Include="tubeCollection.h" />
     <ClInclude Include="TubeView.h" />
     <ClInclude Include="Types.h" />
