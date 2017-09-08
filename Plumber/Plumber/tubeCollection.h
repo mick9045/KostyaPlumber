@@ -1,13 +1,13 @@
 #pragma once
-class baseTube;
-
+#include "baseTube.h"
 class tubeCollection
 {
 public:
 	tubeCollection();
 	~tubeCollection();
 	bool startWater();
-	void addTube(int heightIndex, int widthIndex, baseTube*);
+	void addTube(int heightIndex, int widthIndex, baseTube* tube);
+	const baseTube& getTube(int heightIndex, int widthIndex);
 	int Height();
 	int Width();
 private:

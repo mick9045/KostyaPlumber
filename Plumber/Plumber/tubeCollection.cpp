@@ -27,8 +27,19 @@ void tubeCollection::addTube(int heightIndex, int widthIndex, baseTube * tube)
 		throw std::out_of_range("Out of range by height");
 	if (widthIndex >= width || widthIndex < 0)
 		throw std::out_of_range("Out of range by height");
-	
+	if (field[height][width])
+		delete field[height][width];
 	field[height][width] = tube;
+}
+
+const baseTube& tubeCollection::getTube(int heightIndex, int widthIndex)
+{
+	if (heightIndex >= height || heightIndex < 0)
+		throw std::out_of_range("Out of range by height");
+	if (widthIndex >= width || widthIndex < 0)
+		throw std::out_of_range("Out of range by height");
+
+	return *field[height][width];
 }
 
 int tubeCollection::Height()

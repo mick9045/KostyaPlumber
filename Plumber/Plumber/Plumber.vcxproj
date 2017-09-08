@@ -147,12 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseDialogWindow.cpp" />
+    <ClCompile Include="baseTube.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="tubeCollection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
+    <ClInclude Include="baseTube.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="tubeCollection.h" />
