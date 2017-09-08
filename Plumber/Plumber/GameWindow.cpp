@@ -14,4 +14,9 @@ namespace Plumber
 	{
 	}
 
+	INT_PTR GameWindow::DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	{
+		return INT_PTR();
+	}
+
 }
