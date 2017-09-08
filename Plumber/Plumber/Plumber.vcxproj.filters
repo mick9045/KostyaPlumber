@@ -54,6 +54,12 @@
     <ClCompile Include="baseTube.cpp">
       <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
+    <ClCompile Include="BentPipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StraightPipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="GameWindow.h">
       <Filter>Header Files\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="BentPipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StraightPipe.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
