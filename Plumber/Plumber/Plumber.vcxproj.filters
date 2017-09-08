@@ -45,11 +45,11 @@
     <ClCompile Include="tubeCollection.cpp">
       <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
-    <ClCompile Include="baseTube.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TubeView.cpp">
       <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="baseTube.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
