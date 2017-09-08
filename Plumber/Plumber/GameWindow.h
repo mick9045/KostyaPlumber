@@ -3,13 +3,12 @@
 
 namespace Plumber
 {
-	class TubeView
+	class GameWindow
 		:public BaseDialogWindow
 	{
 	public:
-		TubeView();
-		~TubeView();
-	private:
-
+		GameWindow();
+		~GameWindow();
 	};
 }
+

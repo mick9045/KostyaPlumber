@@ -1,17 +1,17 @@
-#include "TubeView.h"
+#include "GameWindow.h"
 #include "resource.h"
-
 
 namespace Plumber
 {
-	TubeView::TubeView()
+
+	GameWindow::GameWindow()
 		:BaseDialogWindow(IDD_DIALOG_TUBE)
 	{
-
 	}
 
 
-	TubeView::~TubeView()
+	GameWindow::~GameWindow()
 	{
 	}
+
 }

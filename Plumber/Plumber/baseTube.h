@@ -11,6 +11,7 @@ namespace Direction {
 		LEFT
 	};
 }
+
 class BaseTube
 {
 public:
