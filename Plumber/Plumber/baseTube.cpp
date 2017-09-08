@@ -1,13 +1,17 @@
 #include "baseTube.h"
-
-BaseTube::BaseTube()
+namespace Plumber
 {
-}
 
-BaseTube::~BaseTube()
-{
-}
 
-void BaseTube::RotateEntrances()
-{
+	BaseTube::BaseTube()
+	{
+	}
+
+	BaseTube::~BaseTube()
+	{
+	}
+
+	void BaseTube::RotateEntrances()
+	{
+	}
 }
