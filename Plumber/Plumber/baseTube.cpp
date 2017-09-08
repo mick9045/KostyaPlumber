@@ -33,7 +33,7 @@ namespace Plumber
 	}
 	Direction::Direction BaseTube::GetDirection(Direction::Direction direction)
 	{
-		for (int i = ; i < entrances.size(); i++)
+		for (int i = 0; i < entrances.size(); i++)
 		{
 			if (entrances[i].first == direction)
 				return entrances[i].second;
