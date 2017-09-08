@@ -151,6 +151,7 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="StraightPipe.cpp" />
     <ClCompile Include="tubeCollection.cpp" />
     <ClCompile Include="TubeView.cpp" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="StraightPipe.h" />
     <ClInclude Include="tubeCollection.h" />
     <ClInclude Include="TubeView.h" />
     <ClInclude Include="Types.h" />
