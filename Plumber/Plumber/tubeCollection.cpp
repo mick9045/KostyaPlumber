@@ -1,13 +1,14 @@
 #include "tubeCollection.h"
 #include <stdexcept> 
-tubeCollection::tubeCollection()
+
+TubeCollection::TubeCollection()
 {
-	field = new baseTube**[height];
+	field = new BaseTube**[height];
 	for (int i = 0; i < height; i++)
-		field[i] = new baseTube*[width];
+		field[i] = new BaseTube*[width];
 }
 
-tubeCollection::~tubeCollection()
+TubeCollection::~TubeCollection()
 {
 	for(int i = 0; i < height; i++)
 		for (int j = 0; j < width; j++)
@@ -21,7 +22,7 @@ tubeCollection::~tubeCollection()
 	}
 }
 
-void tubeCollection::addTube(int heightIndex, int widthIndex, baseTube * tube)
+void TubeCollection::addTube(int heightIndex, int widthIndex, BaseTube * tube)
 {
 	if (heightIndex >= height || heightIndex < 0)
 		throw std::out_of_range("Out of range by height");
@@ -32,7 +33,7 @@ void tubeCollection::addTube(int heightIndex, int widthIndex, baseTube * tube)
 	field[height][width] = tube;
 }
 
-const baseTube& tubeCollection::getTube(int heightIndex, int widthIndex)
+const BaseTube& TubeCollection::getTube(int heightIndex, int widthIndex)
 {
 	if (heightIndex >= height || heightIndex < 0)
 		throw std::out_of_range("Out of range by height");
@@ -42,12 +43,12 @@ const baseTube& tubeCollection::getTube(int heightIndex, int widthIndex)
 	return *field[height][width];
 }
 
-int tubeCollection::Height()
+int TubeCollection::Height()
 {
 	return height;
 }
 
-int tubeCollection::Width()
+int TubeCollection::Width()
 {
 	return width;
 }

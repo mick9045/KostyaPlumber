@@ -1,6 +1,5 @@
 #pragma once
 #include "BaseDialogWindow.h"
-#include "resource.h"
 
 namespace Plumber
 {

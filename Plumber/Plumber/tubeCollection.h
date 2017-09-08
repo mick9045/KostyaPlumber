@@ -1,17 +1,18 @@
 #pragma once
 #include "baseTube.h"
-class tubeCollection
+
+class TubeCollection
 {
 public:
-	tubeCollection();
-	~tubeCollection();
+	TubeCollection();
+	~TubeCollection();
 	bool startWater();
-	void addTube(int heightIndex, int widthIndex, baseTube* tube);
-	const baseTube& getTube(int heightIndex, int widthIndex);
+	void addTube(int heightIndex, int widthIndex, BaseTube* tube);
+	const BaseTube& getTube(int heightIndex, int widthIndex);
 	int Height();
 	int Width();
 private:
 	const int height = 6;
 	const int width = 11;
-	baseTube *** field;
+	BaseTube *** field;
 };

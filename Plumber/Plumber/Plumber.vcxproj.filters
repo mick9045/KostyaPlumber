@@ -25,6 +25,12 @@
     <Filter Include="Source Files\tubeManagment">
       <UniqueIdentifier>{25e1aac6-63b7-49cc-949c-d2139d0b5a3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\control">
+      <UniqueIdentifier>{c51e8e59-701a-4b08-92e7-88468c83e976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control">
+      <UniqueIdentifier>{d591b819-f75c-4f50-8d31-59799873198c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="baseTube.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TubeView.cpp">
+      <Filter>Source Files\control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="baseTube.h">
       <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="TubeView.h">
+      <Filter>Header Files\control</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

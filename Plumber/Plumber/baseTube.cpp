@@ -1,5 +1,13 @@
 #include "baseTube.h"
 
-void baseTube::RotateEntrances()
+BaseTube::BaseTube()
+{
+}
+
+BaseTube::~BaseTube()
+{
+}
+
+void BaseTube::RotateEntrances()
 {
 }

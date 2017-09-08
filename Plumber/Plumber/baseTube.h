@@ -11,11 +11,11 @@ namespace Direction {
 		LEFT
 	};
 }
-class baseTube
+class BaseTube
 {
 public:
-	baseTube();
-	~baseTube();
+	BaseTube();
+	~BaseTube();
 	virtual Direction::Direction RunWater(Direction::Direction direction) = 0;
 	virtual HBITMAP GetImage() = 0;
 	virtual void Rotate() = 0;

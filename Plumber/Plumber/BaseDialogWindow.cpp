@@ -53,7 +53,7 @@ namespace Plumber
 	}
 
 
-	BOOL BaseDialogWindow::isModal()
+	BOOL BaseDialogWindow::IsModal()
 	{
 		return _bModal;
 	}
@@ -186,7 +186,7 @@ namespace Plumber
 	{
 		if (IsCreated())
 		{
-			if (isModal())
+			if (IsModal())
 				EndDialog(_hwnd, _nResult);
 			else
 				DestroyWindow(_hwnd);

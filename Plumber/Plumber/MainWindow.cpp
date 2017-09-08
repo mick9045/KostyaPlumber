@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <Windowsx.h>
+#include "resource.h"
 
 
 namespace Plumber

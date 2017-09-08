@@ -34,7 +34,7 @@ namespace Plumber
 		INT _nResource;
 		INT _nResult;
 		/*~~~~~~~~~~~~~~ methods~~~~~~~~~~~~~~~~~~*/
-		BOOL isModal();
+		BOOL IsModal();
 		inline static BaseDialogWindow * GetWindowObjectFromHandle(HWND hWnd);
 		virtual INT_PTR DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) = 0;
 	private:
