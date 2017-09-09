@@ -150,6 +150,7 @@
     <ClCompile Include="baseTube.cpp" />
     <ClCompile Include="BentPipe.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="ImagePool.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="StraightPipe.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="baseTube.h" />
     <ClInclude Include="BentPipe.h" />
     <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="ImagePool.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StraightPipe.h" />

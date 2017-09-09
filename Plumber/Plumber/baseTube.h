@@ -1,6 +1,8 @@
 #pragma once
 #include <Windows.h>
 #include <vector>
+#include "ImagePool.h"
+
 namespace Plumber
 {
 
@@ -27,7 +29,8 @@ namespace Plumber
 		std::vector< std::pair<Direction::Direction, Direction::Direction> > entrances;
 		void RotateEntrances();
 		Direction::Direction GetDirection(Direction::Direction direction);
-		bool isFilled = false;
+		bool _isFilled = false;
+		static ImagePool _imagePool;
 	private:
 
 	};

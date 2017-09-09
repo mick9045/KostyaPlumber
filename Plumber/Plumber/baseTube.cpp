@@ -1,6 +1,7 @@
 #include "baseTube.h"
 namespace Plumber
 {
+	ImagePool BaseTube::_imagePool = ImagePool();
 
 	BaseTube::BaseTube()
 	{
@@ -13,9 +14,8 @@ namespace Plumber
 
 	bool BaseTube::IsFilled()
 	{
-		return isFilled;
+		return _isFilled;
 	}
-
 
 
 	void BaseTube::RotateEntrances()
