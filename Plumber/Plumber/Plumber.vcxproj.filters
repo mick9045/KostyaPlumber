@@ -66,6 +66,9 @@
     <ClCompile Include="CrossPipe.cpp">
       <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
+    <ClCompile Include="InformationWindow.cpp">
+      <Filter>Source Files\dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="CrossPipe.h">
       <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="InformationWindow.h">
+      <Filter>Header Files\dialog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

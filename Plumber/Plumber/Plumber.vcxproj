@@ -152,6 +152,7 @@
     <ClCompile Include="CrossPipe.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="ImagePool.cpp" />
+    <ClCompile Include="InformationWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="StraightPipe.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="CrossPipe.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImagePool.h" />
+    <ClInclude Include="InformationWindow.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StraightPipe.h" />
