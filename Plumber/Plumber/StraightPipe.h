@@ -6,12 +6,12 @@ namespace Plumber
 	class StraightPipe
 		: public BaseTube
 	{
-		HBITMAP image;
 	public:
 		StraightPipe();
+		~StraightPipe();
 
-		virtual Direction::Direction RunWater(Direction::Direction direction);
-		virtual HBITMAP GetImage();
-		virtual void Rotate();
+		// Inherited via BaseTube
+		virtual Direction::Direction RunWater(Direction::Direction direction) override;
+		virtual void Rotate(int count = 1) override;
 	};
 }

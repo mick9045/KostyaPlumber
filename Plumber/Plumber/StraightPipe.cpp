@@ -1,21 +1,21 @@
 #include "StraightPipe.h"
 namespace Plumber
 {
+
 	StraightPipe::StraightPipe()
 	{
-		
 
+	}
+
+
+	StraightPipe::~StraightPipe()
+	{
 	}
 	Direction::Direction StraightPipe::RunWater(Direction::Direction direction)
 	{
-		return direction;
+		return Direction::Direction();
 	}
-	HBITMAP StraightPipe::GetImage()
+	void StraightPipe::Rotate(int count = 1)
 	{
-		return image;
-	}
-	void StraightPipe::Rotate()
-	{
-
 	}
 }
