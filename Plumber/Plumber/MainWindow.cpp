@@ -2,6 +2,7 @@
 #include <Windowsx.h>
 #include "resource.h"
 #include "GameWindow.h"
+#include "InformationWindow.h"
 
 namespace Plumber
 {
@@ -28,6 +29,7 @@ namespace Plumber
 			HANDLE_MSG(hwnd, WM_DESTROY, Cls_OnDestroy);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
 			//HANDLE_MSG(hwnd, WM_)
+			
 		}
 
 		return FALSE;
@@ -52,6 +54,18 @@ namespace Plumber
 				delete gameWindow;
 				ShowWindow(hWindow(), SW_SHOW);
 			}
+			case IDC_EXIT:
+			{
+				Close();
+				PostQuitMessage(NULL);
+			}
+			case IDC_INFORMATION:
+			{
+				InformationWindow * informationWindow = new InformationWindow();
+				informationWindow->CreateModal();
+				delete informationWindow;
+			}
+
 			default:
 				break;
 			}
