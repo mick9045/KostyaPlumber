@@ -18,16 +18,16 @@ namespace Plumber
 
 	Direction::Direction CrossPipe::RunWater(Direction::Direction direction)
 	{
-		if (_filledHor || _filledVer)
+		if (_filledHor || _filledVer || direction == Direction::NON)
 		{
 			return Direction::NON;
 		}
 
-		Direction::Direction direction = GetDirection(direction);
+		Direction::Direction exitDirection = GetDirection(direction);
 
-		if (direction != Direction::Direction::NON)
+		if (exitDirection != Direction::Direction::NON)
 		{
-			if (direction == Direction::UP || direction == Direction::DOWN)
+			if (exitDirection == Direction::UP || exitDirection == Direction::DOWN)
 			{
 				if (_filledHor == false)
 				{
@@ -51,12 +51,11 @@ namespace Plumber
 				}
 				setFilled(true);
 			}
-			return direction;
 		}
-		
+		return exitDirection;
 	}
 
-	void CrossPipe::Rotate(int count = 1)
+	void CrossPipe::Rotate(int count)
 	{
 	}
 }
