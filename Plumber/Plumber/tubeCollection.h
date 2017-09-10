@@ -1,5 +1,7 @@
 #pragma once
 #include "baseTube.h"
+#include <memory>
+
 namespace Plumber
 {
 	class TubeCollection
@@ -8,13 +10,13 @@ namespace Plumber
 		TubeCollection();
 		~TubeCollection();
 		bool startWater();
-		void addTube(int heightIndex, int widthIndex, BaseTube* tube);
-		const BaseTube& getTube(int heightIndex, int widthIndex);
+		void addTube(int heightIndex, int widthIndex, std::shared_ptr<BaseTube> tube);
+	    std::shared_ptr<BaseTube> getTube(int heightIndex, int widthIndex);
 		int Height();
 		int Width();
 	private:
 		const int height = 6;
 		const int width = 11;
-		BaseTube *** field;
+		std::shared_ptr<BaseTube> ** field;
 	};
 }
