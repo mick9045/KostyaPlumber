@@ -22,8 +22,8 @@ namespace Plumber
 	bool TubeCollection::startWater()
 	{
 		Direction::Direction waterOut = Direction::UP;
-		int curI;
-		int curJ;
+		int curI = 0;
+		int curJ = 0;
 		while (true)
 		{
 			waterOut = field[curI][curJ]->RunWater(waterOut);
