@@ -51,4 +51,16 @@ namespace Plumber
 	{
 		_hImage = hImage;
 	}
+	PipeImage::PipeImage BaseTube::GetImageState()
+	{
+		return _imageState;
+	}
+	void BaseTube::SetImageSate(PipeImage::PipeImage image)
+	{
+		_imageState = image;
+	}
+	void BaseTube::setFilled(bool filled)
+	{
+		_isFilled = filled;
+	}
 }

@@ -31,10 +31,13 @@ namespace Plumber
 		Direction::Direction GetDirection(Direction::Direction direction);
 		void SetImage(HBITMAP hImage);
 		static ImagePool _imagePool;
+		PipeImage::PipeImage GetImageState();
+		void SetImageSate(PipeImage::PipeImage image);
+		void setFilled(bool filled);
 	private:
 		bool _isFilled = false;
 		HBITMAP _hImage;
-
+		PipeImage::PipeImage _imageState;
 	};
 
 }

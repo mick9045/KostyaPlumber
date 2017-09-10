@@ -12,7 +12,6 @@ namespace Plumber
 		~BentPipe();
 
 		Direction::Direction RunWater(Direction::Direction direction);
-		HBITMAP GetImage();
-		void Rotate();
+		virtual void Rotate(int count = 1);
 	};
 }
