@@ -32,7 +32,7 @@ namespace Plumber
 		void SetImage(HBITMAP hImage);
 		static ImagePool _imagePool;
 		PipeImage::PipeImage GetImageState();
-		void SetImageSate(PipeImage::PipeImage image);
+		void SetImageState(PipeImage::PipeImage image);
 		void setFilled(bool filled);
 	private:
 		bool _isFilled = false;

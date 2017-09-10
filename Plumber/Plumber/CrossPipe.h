@@ -4,7 +4,7 @@
 namespace Plumber
 {
 	class CrossPipe
-		:public BaseTube
+		: public BaseTube
 	{
 	public:
 		CrossPipe();
@@ -13,5 +13,8 @@ namespace Plumber
 		// Inherited via BaseTube
 		virtual Direction::Direction RunWater(Direction::Direction direction) override;
 		virtual void Rotate(int count = 1) override;
+	protected:
+		bool _filledHor;
+		bool _filledVer;
 	};
 }

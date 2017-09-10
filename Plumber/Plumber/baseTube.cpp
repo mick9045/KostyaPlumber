@@ -55,7 +55,7 @@ namespace Plumber
 	{
 		return _imageState;
 	}
-	void BaseTube::SetImageSate(PipeImage::PipeImage image)
+	void BaseTube::SetImageState(PipeImage::PipeImage image)
 	{
 		_imageState = image;
 	}
