@@ -5,8 +5,7 @@ namespace Plumber
 {
 	class BentPipe : public BaseTube
 	{
-	private:
-		HBITMAP _hImage;
+
 	public:
 		BentPipe();
 		~BentPipe();
