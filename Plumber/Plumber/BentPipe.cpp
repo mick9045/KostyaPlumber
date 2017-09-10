@@ -10,12 +10,12 @@ namespace Plumber
 	
 	void BentPipe::Rotate()
 	{
-		_image = LoadBitmap(GetModuleHandle(NULL), L"Path...");
+		_hImage = LoadBitmap(GetModuleHandle(NULL), L"Path...");
 	}
 
 	HBITMAP BentPipe::GetImage()
 	{
-		return _image;
+		return _hImage;
 	}
 
 	Direction::Direction BentPipe::RunWater(Direction::Direction direction)

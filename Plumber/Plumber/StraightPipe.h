@@ -3,7 +3,8 @@
 
 namespace Plumber
 {
-	class StraightPipe : BaseTube
+	class StraightPipe
+		: public BaseTube
 	{
 		HBITMAP image;
 	public:

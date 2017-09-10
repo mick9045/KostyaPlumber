@@ -54,14 +54,17 @@
     <ClCompile Include="baseTube.cpp">
       <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
+    <ClCompile Include="ImagePool.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
+    </ClCompile>
     <ClCompile Include="BentPipe.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
     <ClCompile Include="StraightPipe.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
-    <ClCompile Include="ImagePool.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CrossPipe.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,13 +93,16 @@
       <Filter>Header Files\dialog</Filter>
     </ClInclude>
     <ClInclude Include="BentPipe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StraightPipe.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tubeManagment</Filter>
     </ClInclude>
     <ClInclude Include="ImagePool.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="StraightPipe.h">
+      <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="CrossPipe.h">
+      <Filter>Header Files\tubeManagment</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

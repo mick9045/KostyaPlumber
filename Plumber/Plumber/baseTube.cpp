@@ -17,6 +17,11 @@ namespace Plumber
 		return _isFilled;
 	}
 
+	HBITMAP BaseTube::GetImage()
+	{
+		return _hImage;
+	}
+
 
 	void BaseTube::RotateEntrances()
 	{
@@ -41,5 +46,9 @@ namespace Plumber
 				return entrances[i].first;
 		}
 		return Direction::NON;
+	}
+	void BaseTube::SetImage(HBITMAP hImage)
+	{
+		_hImage = hImage;
 	}
 }

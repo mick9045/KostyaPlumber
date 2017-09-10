@@ -23,15 +23,17 @@ namespace Plumber
 		~BaseTube();
 		bool IsFilled();
 		virtual Direction::Direction RunWater(Direction::Direction direction) = 0;
-		virtual HBITMAP GetImage() = 0;
+		virtual HBITMAP GetImage();
 		virtual void Rotate(int count = 1) = 0;
 	protected:
 		std::vector< std::pair<Direction::Direction, Direction::Direction> > entrances;
 		void RotateEntrances();
 		Direction::Direction GetDirection(Direction::Direction direction);
-		bool _isFilled = false;
+		void SetImage(HBITMAP hImage);
 		static ImagePool _imagePool;
 	private:
+		bool _isFilled = false;
+		HBITMAP _hImage;
 
 	};
 
