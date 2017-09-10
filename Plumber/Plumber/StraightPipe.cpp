@@ -23,7 +23,7 @@ namespace Plumber
 			setFilled(true);
 		return waterOut;
 	}
-	void StraightPipe::Rotate(int count = 1)
+	void StraightPipe::Rotate(int count)
 	{
 		if (IsFilled())
 			return;
@@ -31,8 +31,8 @@ namespace Plumber
 		{
 			RotateEntrances();
 			int newState = GetImageState() - 1;
-			if (newState < PipeImage::STRAIGHT_HOR)
-				newState = PipeImage::STRAIGHT_VER;
+			if (newState < PipeImage::STRAIGHT_VER)
+				newState = PipeImage::STRAIGHT_HOR;
 			SetImageSate((PipeImage::PipeImage)newState);
 		}
 		SetImage(_imagePool.Get(GetImageState()));
