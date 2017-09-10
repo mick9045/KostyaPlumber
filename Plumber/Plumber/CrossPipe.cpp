@@ -32,6 +32,7 @@ namespace Plumber
 				if (_filledHor == false)
 				{
 					SetImageState(PipeImage::CROSS_FILLED_VER);
+					_filledVer = true;
 				}
 				else
 				{
@@ -44,6 +45,7 @@ namespace Plumber
 				if (_filledVer == false)
 				{
 					SetImageState(PipeImage::CROSS_FILLED_HOR);
+					_filledHor = true;
 				}
 				else
 				{

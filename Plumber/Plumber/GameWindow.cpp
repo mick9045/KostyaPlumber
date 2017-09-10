@@ -1,5 +1,6 @@
 #include "GameWindow.h"
 #include "resource.h"
+#include "TubeView.h"
 
 namespace Plumber
 {
@@ -7,6 +8,9 @@ namespace Plumber
 	GameWindow::GameWindow()
 		:BaseDialogWindow(IDD_DIALOG_TUBE)
 	{
+		TubeView *tubeView = new TubeView();
+		tubeView->Create(hWindow());
+		delete tubeView;
 	}
 
 
