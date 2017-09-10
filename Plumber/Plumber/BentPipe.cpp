@@ -3,23 +3,23 @@ namespace Plumber
 {
 	BentPipe::BentPipe()
 	{
-		entrances.push_back(std::pair(Direction::UP, Direction::RIGHT));
+		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::UP, Direction::RIGHT));
+		SetImageSate(PipeImage::BENT_UP);
+		SetImage(_imagePool.Get(GetImageState()));
 	}
 	BentPipe::~BentPipe()
 	{
 	}
-	
-
 
 	Direction::Direction BentPipe::RunWater(Direction::Direction direction)
 	{
 		auto waterOut = GetDirection(direction);
-		
-			SetImageSate(PipeImage::PipeImage(GetImageState() + 4));
-			SetImage(_imagePool.Get(GetImageState()));
-			if (waterOut != Direction::NON)
-				setFilled(true);
-			return waterOut;
+
+		SetImageSate(PipeImage::PipeImage(GetImageState() + 4));
+		SetImage(_imagePool.Get(GetImageState()));
+		if (waterOut != Direction::NON)
+			setFilled(true);
+		return waterOut;
 	}
 	void BentPipe::Rotate(int count)
 	{
