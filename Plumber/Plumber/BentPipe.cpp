@@ -4,7 +4,7 @@ namespace Plumber
 	BentPipe::BentPipe()
 	{
 		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::UP, Direction::RIGHT));
-		SetImageSate(PipeImage::BENT_UP);
+		SetImageState(PipeImage::BENT_UP);
 		SetImage(_imagePool.Get(GetImageState()));
 	}
 	BentPipe::~BentPipe()
@@ -15,7 +15,7 @@ namespace Plumber
 	{
 		auto waterOut = GetDirection(direction);
 
-		SetImageSate(PipeImage::PipeImage(GetImageState() + 4));
+		SetImageState(PipeImage::PipeImage(GetImageState() + 4));
 		SetImage(_imagePool.Get(GetImageState()));
 		if (waterOut != Direction::NON)
 			setFilled(true);
@@ -31,7 +31,7 @@ namespace Plumber
 			int newState = GetImageState() + 1;
 			if (newState > PipeImage::BENT_LEFT)
 				newState = PipeImage::BENT_UP;
-			SetImageSate((PipeImage::PipeImage)newState);
+			SetImageState((PipeImage::PipeImage)newState);
 		}
 		SetImage(_imagePool.Get(GetImageState()));
 	}

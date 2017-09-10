@@ -5,7 +5,7 @@ namespace Plumber
 	StraightPipe::StraightPipe()
 	{
 		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::UP, Direction::DOWN));
-		SetImageSate(PipeImage::STRAIGHT_VER);
+		SetImageState(PipeImage::STRAIGHT_VER);
 		SetImage(_imagePool.Get(GetImageState()));
 	}
 
@@ -17,7 +17,7 @@ namespace Plumber
 	{
 		auto waterOut = GetDirection(direction);
 
-		SetImageSate(PipeImage::PipeImage(GetImageState() + 2));
+		SetImageState(PipeImage::PipeImage(GetImageState() + 2));
 		SetImage(_imagePool.Get(GetImageState()));
 		if (waterOut != Direction::NON)
 			setFilled(true);
@@ -31,9 +31,9 @@ namespace Plumber
 		{
 			RotateEntrances();
 			int newState = GetImageState() - 1;
-			if (newState < PipeImage::STRAIGHT_VER)
-				newState = PipeImage::STRAIGHT_HOR;
-			SetImageSate((PipeImage::PipeImage)newState);
+			if (newState < PipeImage::STRAIGHT_HOR)
+				newState = PipeImage::STRAIGHT_VER;
+			SetImageState((PipeImage::PipeImage)newState);
 		}
 		SetImage(_imagePool.Get(GetImageState()));
 	}
