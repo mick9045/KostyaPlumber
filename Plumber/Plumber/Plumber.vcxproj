@@ -153,6 +153,8 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="ImagePool.cpp" />
     <ClCompile Include="InformationWindow.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="StraightPipe.cpp" />
@@ -167,6 +169,8 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImagePool.h" />
     <ClInclude Include="InformationWindow.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelManager.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Pipes.h" />
     <ClInclude Include="resource.h" />
