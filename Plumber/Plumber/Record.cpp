@@ -1,6 +1,10 @@
 #include "Record.h"
 namespace Plumber
 {
+	Record::Record()
+	{
+		time = 0;
+	}
 	Record::Record(int _time)
 	{
 		time = _time;

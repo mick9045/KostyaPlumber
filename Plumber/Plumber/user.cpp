@@ -4,7 +4,7 @@ namespace Plumber
 	User::User()
 	{
 		login = _T("Игрок");
-		password = _T('');
+		password = _T("");
 	}
 
 	User::User(tString _login, tString _password)
