@@ -1,31 +1,28 @@
 #pragma once
 #include "Types.h"
+#include "Record.h"
+#include <map>
 #include <vector>
 
 namespace Plumber
 {
-	class user
+	class User
 	{
 	public:
-		user();
-		user(tString l, tString p);
-		~user();
+		User();
+		User(tString _login, tString _password);
 
-		tString getLogin();
-		tString getPassword();
+		tString GetLogin();
+		tString GetPassword();		
 
-		std::vector<int> getResults();
-
-		void addResult(int time);
-		void editResult(int level_number, int time);
-
-
+		Record GetResult(int level_number);
+		void EditResult(int level_number, Record record);
 	
 	private:
 		tString login;
 		tString password;
 
-		std::vector<int> results;
+		std::map<int, Record> results;
 	};
 }
 #pragma once
