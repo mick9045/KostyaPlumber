@@ -1,6 +1,8 @@
 #include "TubeView.h"
 #include "resource.h"
 #include <windowsx.h>
+#include <memory>
+#include "Pipes.h"
 
 
 namespace Plumber
@@ -14,17 +16,63 @@ namespace Plumber
 	{
 	}
 
-	void TubeView::Cls_OnClose(HWND hwnd)
+	void TubeView::SetTube(std::shared_ptr<BaseTube> tube)
 	{
-		Close();
+		_tube = tube;
+		UpdateImage();
+	}
+
+	void TubeView::Cls_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
+	{
+		if (codeNotify == STN_CLICKED)
+		{
+			switch (id)
+			{
+			case IDC_STATIC_TUBE:
+				if (_tube)
+				{
+					_tube->Rotate();
+					UpdateImage();
+				}
+				break;
+			}
+		}
+	}
+
+	void TubeView::Cls_OnSize(HWND hwnd, UINT state, int cx, int cy)
+	{
+		//SetSize(GetDlgItem(hwnd, IDC_STATIC_TUBE), cx, cy);
+	}
+
+	BOOL TubeView::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
+	{
+		SetSize(100, 100);
+		SetSize(GetDlgItem(hwnd, IDC_STATIC_TUBE),100, 100);
+		UpdateImage();
+		return 0;
+	}
+
+	void TubeView::UpdateImage()
+	{
+		if (_tube)
+		{
+			SendDlgItemMessage(
+				hWindow(),
+				IDC_STATIC_TUBE,
+				STM_SETIMAGE,
+				IMAGE_BITMAP,
+				(LPARAM)_tube->GetImage()
+			);
+		}
 	}
 
 	INT_PTR TubeView::DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		switch (uMsg)
 		{
-			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);
-			
+			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
+			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
 		}
+		return false;
 	}
 }

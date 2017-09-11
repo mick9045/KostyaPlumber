@@ -28,6 +28,7 @@ namespace Plumber
 			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);	
 			HANDLE_MSG(hwnd, WM_DESTROY, Cls_OnDestroy);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
+			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
 			//HANDLE_MSG(hwnd, WM_)
 			
 		}
@@ -46,13 +47,11 @@ namespace Plumber
 		{
 			switch (id)
 			{
-			case IDOK:
+			case IDC_PLAY:
 			{
 				GameWindow * gameWindow = new GameWindow();
-				ShowWindow(hWindow(), SW_HIDE);
 				gameWindow->CreateModal();
 				delete gameWindow;
-				ShowWindow(hWindow(), SW_SHOW);
 			}
 			case IDC_EXIT:
 			{
@@ -70,5 +69,10 @@ namespace Plumber
 				break;
 			}
 		}
+	}
+
+	BOOL MainWindow::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
+	{
+		return FALSE;
 	}
 }

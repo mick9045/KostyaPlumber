@@ -168,6 +168,7 @@
     <ClInclude Include="ImagePool.h" />
     <ClInclude Include="InformationWindow.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Pipes.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StraightPipe.h" />
     <ClInclude Include="tubeCollection.h" />

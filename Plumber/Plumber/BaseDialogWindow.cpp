@@ -1,4 +1,5 @@
 #include "BaseDialogWindow.h"
+#include "exception"
 
 namespace Plumber
 {
@@ -113,6 +114,10 @@ namespace Plumber
 
 	HWND BaseDialogWindow::hWindow()
 	{
+		if (_hwnd == nullptr)
+		{
+			throw std::exception("window is not created");
+		}
 		return _hwnd;
 	}
 
@@ -124,6 +129,11 @@ namespace Plumber
 	SIZE BaseDialogWindow::GetSize()
 	{
 		return GetSize(_hwnd);
+	}
+
+	void BaseDialogWindow::SetSize(int x, int y)
+	{
+		SetSize(_hwnd, x, y);
 	}
 
 	RECT BaseDialogWindow::GetRect()
@@ -170,6 +180,11 @@ namespace Plumber
 		RECT rect;
 		GetWindowRect(hwnd, &rect);
 		return SIZE{ rect.right - rect.left, rect.bottom - rect.top };
+	}
+
+	void BaseDialogWindow::SetSize(HWND hWnd, int x, int y)
+	{
+		SetWindowPos(hWnd, NULL, 0, 0, x, y, SWP_NOMOVE);
 	}
 
 	INT BaseDialogWindow::GetMenuItemPosById(HMENU hMenu, INT nId)

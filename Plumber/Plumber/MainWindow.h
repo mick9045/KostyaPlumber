@@ -13,6 +13,7 @@ namespace Plumber
 		void Cls_OnClose(HWND hwnd);
 		VOID Cls_OnDestroy(HWND hwnd);
 		VOID Cls_OnCommand(HWND hwnd, INT id, HWND hwndCtl, UINT codeNotify);
+		BOOL Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam);
 
 		
 	private:

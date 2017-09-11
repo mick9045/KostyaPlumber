@@ -13,6 +13,7 @@ namespace Plumber
 	StraightPipe::~StraightPipe()
 	{
 	}
+
 	Direction::Direction StraightPipe::RunWater(Direction::Direction direction)
 	{
 		auto waterOut = GetDirection(direction);

@@ -110,6 +110,9 @@
     <ClInclude Include="InformationWindow.h">
       <Filter>Header Files\dialog</Filter>
     </ClInclude>
+    <ClInclude Include="Pipes.h">
+      <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plumber.rc">
