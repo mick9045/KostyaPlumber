@@ -143,6 +143,11 @@ namespace Plumber
 		return rect;
 	}
 
+	void BaseDialogWindow::SetPos(int x, int y)
+	{
+		return SetPos(_hwnd, x, y);
+	}
+
 	POINT BaseDialogWindow::GetLocalPosition()
 	{
 		return GetLocalPosition(_hwnd);
@@ -185,6 +190,11 @@ namespace Plumber
 	void BaseDialogWindow::SetSize(HWND hWnd, int x, int y)
 	{
 		SetWindowPos(hWnd, NULL, 0, 0, x, y, SWP_NOMOVE);
+	}
+
+	void BaseDialogWindow::SetPos(HWND hWnd, int x, int y)
+	{
+		SetWindowPos(hWnd, NULL, x, y, 0, 0, SWP_NOSIZE);
 	}
 
 	INT BaseDialogWindow::GetMenuItemPosById(HMENU hMenu, INT nId)

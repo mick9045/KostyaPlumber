@@ -7,6 +7,16 @@
 
 namespace Plumber
 {
+	HBITMAP TubeView::_hbmpBackground = (HBITMAP)LoadImage(
+		GetModuleHandle(NULL),
+		_T("Images/pattern.bmp"),
+		IMAGE_BITMAP,
+		0, 0,
+		LR_LOADFROMFILE
+	);
+
+	HBRUSH TubeView::_hbrBackground = CreatePatternBrush(_hbmpBackground);
+
 	TubeView::TubeView()
 		:BaseDialogWindow(IDD_DIALOG_TUBE)
 	{
@@ -52,6 +62,11 @@ namespace Plumber
 		return 0;
 	}
 
+	HBRUSH TubeView::Cls_OnCtlColor(HWND hwnd, HDC hdc, HWND hwndChild, int type)
+	{
+		return _hbrBackground;
+	}
+
 	void TubeView::UpdateImage()
 	{
 		if (_tube)
@@ -72,6 +87,8 @@ namespace Plumber
 		{
 			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
+			//HANDLE_MSG(hwnd, WM_CTLCOLORDLG, Cls_OnCtlColor);
+			HANDLE_MSG(hwnd, WM_CTLCOLORSTATIC, Cls_OnCtlColor);
 		}
 		return false;
 	}

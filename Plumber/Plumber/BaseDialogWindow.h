@@ -22,12 +22,14 @@ namespace Plumber
 		SIZE GetSize();
 		void SetSize(int with, int height);
 		RECT GetRect();
+		void SetPos(int x, int y);
 		POINT GetLocalPosition();
 		static tString GetText(HWND hWnd);
 		static POINT GetLocalPosition(HWND hWnd);
 		static SIZE GetClientSize(HWND hWnd);
 		static SIZE GetSize(HWND hWnd);
 		static void SetSize(HWND hWnd, int width, int height);
+		static void SetPos(HWND hWnd, int x, int y);
 		static INT GetMenuItemPosById(HMENU hMenu, INT id);
 		/*~~~~~~~~~~~~~~ methods~~~~~~~~~~~~~~~~~~*/
 		void Close();

@@ -15,5 +15,6 @@ namespace Plumber
 
 	void EmptyPipe::Rotate(int count)
 	{
+
 	}
 }
