@@ -1,16 +1,18 @@
 #pragma once
-
+#include "tubeCollection.h"
 //Может никогда не пригодиться. 
 namespace Plumber
 {
 	class Level
 	{
 	public:
-		Level();
+		Level(int seconds, int field[HEIGHT][WIDTH]);
+		TubeCollection GetCollection();
+		int GetSeconds();
 		~Level();
 	private:
-		int seconds;
-
+		int _seconds;
+		TubeCollection _tubes;
 	};
 
 }

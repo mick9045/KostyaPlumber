@@ -1,6 +1,5 @@
 #pragma once
-#include "Pipes.h"
-#include "tubeCollection.h"
+#include "Level.h"
 #include <vector>
 namespace Plumber
 {
@@ -10,8 +9,8 @@ namespace Plumber
 		LevelManager();
 		~LevelManager();
 		int Count();
-		TubeCollection GetLevel(int level);
+		Level GetLevel(int level);
 	private:
-		std::vector<TubeCollection> _tubes;
+		std::vector<Level> _levels;
 	};
 }

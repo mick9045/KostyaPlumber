@@ -1,4 +1,5 @@
 #include "tubeCollection.h"
+#include "Pipes.h"
 #include <stdexcept> 
 namespace Plumber
 {
@@ -6,14 +7,73 @@ namespace Plumber
 
 	TubeCollection::TubeCollection()
 	{
+		field = new std::shared_ptr<BaseTube> *[HEIGHT];
+		for (int i = 0; i < HEIGHT; i++)
+			field[i] = new std::shared_ptr<BaseTube>[WIDTH];
+	}
+
+	TubeCollection::TubeCollection(int intField[HEIGHT][WIDTH]) :TubeCollection()
+	{
+		for (int i = 0; i < HEIGHT; i++)
+			for (int j = 0; j < WIDTH; j++)
+			{
+				if (intField[i][j] == PipeImage::STRAIGHT_HOR)
+				{
+					field[i][j] = std::make_shared<StraightPipe>(StraightPipe());
+				}
+				else if (intField[i][j] == PipeImage::STRAIGHT_VER)
+				{
+					field[i][j] = std::make_shared<StraightPipe>(StraightPipe());
+					field[i][j]->Rotate();
+				}
+				else if (intField[i][j] == PipeImage::BENT_UP)
+				{
+					field[i][j] = std::make_shared<BentPipe>(BentPipe());
+
+				}
+				else if (intField[i][j] == PipeImage::BENT_RIGHT)
+				{
+					field[i][j] = std::make_shared<BentPipe>(BentPipe());
+					field[i][j]->Rotate();
+				}
+				else if (intField[i][j] == PipeImage::BENT_DOWN)
+				{
+					field[i][j] = std::make_shared<BentPipe>(BentPipe());
+					field[i][j]->Rotate(2);
+				}
+				else if (intField[i][j] == PipeImage::BENT_LEFT)
+				{
+					field[i][j] = std::make_shared<BentPipe>(BentPipe());
+					field[i][j]->Rotate(3);
+				}
+				else if (intField[i][j] == PipeImage::CROSS)
+				{
+					field[i][j] = std::make_shared<CrossPipe>(CrossPipe());
+				}
+				else if (intField[i][j] == PipeImage::EMPTY)
+				{
+					field[i][j] = std::make_shared<EmptyPipe>(EmptyPipe());
+				}
+			}
+	}
+/*
+	TubeCollection::TubeCollection(const TubeCollection & object) 
+	{
 		field = new std::shared_ptr<BaseTube> *[height];
 		for (int i = 0; i < height; i++)
 			field[i] = new std::shared_ptr<BaseTube>[width];
-	}
+	
+		for (int i = 0; i < height; i++)
+			for (int j = 0; j < width; j++)
+			{
+				field[i][j] = object.field[i][j];
+			}
+
+	}*/
 
 	TubeCollection::~TubeCollection()
 	{
-		for (int i = 0; i < height; i++)
+		for (int i = 0; i < HEIGHT; i++)
 		{
 			delete[] field[i];
 		}
@@ -29,24 +89,24 @@ namespace Plumber
 			waterOut = field[curI][curJ]->RunWater(waterOut);
 			if (waterOut == Direction::NON)
 				return false;
-			else if (curI == height - 1 && curJ == width - 1 && waterOut == Direction::DOWN)
+			else if (curI == HEIGHT - 1 && curJ == WIDTH - 1 && waterOut == Direction::DOWN)
 				return true;
 			switch (waterOut)
 			{
-				case Direction::DOWN:
-					++curI;
+			case Direction::DOWN:
+				++curI;
 				break;
-				case Direction::UP:
-					--curI;
-					break;
-				case Direction::RIGHT:
-					++curJ;
-					break;
-				case Direction::LEFT:
-					--curJ;
-					break;
-				default:
-					break;
+			case Direction::UP:
+				--curI;
+				break;
+			case Direction::RIGHT:
+				++curJ;
+				break;
+			case Direction::LEFT:
+				--curJ;
+				break;
+			default:
+				break;
 			}
 
 		}
@@ -54,30 +114,21 @@ namespace Plumber
 
 	void TubeCollection::addTube(int heightIndex, int widthIndex, std::shared_ptr<BaseTube> tube)
 	{
-		if (heightIndex >= height || heightIndex < 0)
+		if (heightIndex >= HEIGHT || heightIndex < 0)
 			throw std::out_of_range("Out of range by height");
-		if (widthIndex >= width || widthIndex < 0)
+		if (widthIndex >= WIDTH || widthIndex < 0)
 			throw std::out_of_range("Out of range by height");
-		field[height][width] = tube;
+		field[HEIGHT][WIDTH] = tube;
 	}
 
 	std::shared_ptr<BaseTube> TubeCollection::getTube(int heightIndex, int widthIndex)
 	{
-		if (heightIndex >= height || heightIndex < 0)
+		if (heightIndex >= HEIGHT || heightIndex < 0)
 			throw std::out_of_range("Out of range by height");
-		if (widthIndex >= width || widthIndex < 0)
+		if (widthIndex >= WIDTH || widthIndex < 0)
 			throw std::out_of_range("Out of range by height");
 
-		return field[height][width];
+		return field[HEIGHT][WIDTH];
 	}
 
-	int TubeCollection::Height()
-	{
-		return height;
-	}
-
-	int TubeCollection::Width()
-	{
-		return width;
-	}
 }
