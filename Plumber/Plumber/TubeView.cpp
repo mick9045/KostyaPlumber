@@ -24,7 +24,7 @@ namespace Plumber
 
 	void TubeView::Cls_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
 	{
-		if (codeNotify == STN_CLICKED)
+		if (codeNotify == STN_CLICKED || codeNotify == STN_DBLCLK)
 		{
 			switch (id)
 			{
