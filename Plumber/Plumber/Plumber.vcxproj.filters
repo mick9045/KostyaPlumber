@@ -69,6 +69,9 @@
     <ClCompile Include="InformationWindow.cpp">
       <Filter>Source Files\dialog</Filter>
     </ClCompile>
+    <ClCompile Include="EmptyPipe.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h">
@@ -111,6 +114,9 @@
       <Filter>Header Files\dialog</Filter>
     </ClInclude>
     <ClInclude Include="Pipes.h">
+      <Filter>Header Files\tubeManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="EmptyPipe.h">
       <Filter>Header Files\tubeManagment</Filter>
     </ClInclude>
   </ItemGroup>

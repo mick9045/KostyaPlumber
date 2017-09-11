@@ -23,7 +23,6 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 
 	while (GetMessage(&msg, NULL, NULL, NULL))
 	{
-
 		/*
 		if (!IsDialogMessage(hMainWindow, &msg))
 		{
