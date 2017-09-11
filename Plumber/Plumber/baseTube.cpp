@@ -17,7 +17,7 @@ namespace Plumber
 		return _isFilled;
 	}
 
-	HBITMAP BaseTube::GetImage()
+	HICON BaseTube::GetImage()
 	{
 		return _hImage;
 	}
@@ -47,7 +47,7 @@ namespace Plumber
 		}
 		return Direction::NON;
 	}
-	void BaseTube::SetImage(HBITMAP hImage)
+	void BaseTube::SetImage(HICON hImage)
 	{
 		_hImage = hImage;
 	}

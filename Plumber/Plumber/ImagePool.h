@@ -24,15 +24,17 @@ namespace Plumber
 		~ImagePool();
 		ImagePool & operator=(ImagePool const & imagePool);
 		ImagePool & operator=(ImagePool && imagePool);
-		HBITMAP operator[](PipeImage::PipeImage pipeImage);
-		HBITMAP Get(PipeImage::PipeImage pipeImage);
+		HICON operator[](PipeImage::PipeImage pipeImage);
+		HICON Get(PipeImage::PipeImage pipeImage);
 	protected:
-		HBITMAP LoadImg(LPCTCH path);
-		HBITMAP CopyImg(HBITMAP hImage);
-		std::map<PipeImage::PipeImage, HBITMAP> _images;
+		HICON LoadImg(LPCTCH path);
+		HICON CopyImg(HICON hImage);
+		std::map<PipeImage::PipeImage, HICON> _images;
 	private:
+		ULONG_PTR _gdiplusToken;
 		void UnloadImages();
 		bool _moved;
+
 	};
 }
 

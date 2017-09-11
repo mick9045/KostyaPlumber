@@ -150,6 +150,7 @@
     <ClCompile Include="baseTube.cpp" />
     <ClCompile Include="BentPipe.cpp" />
     <ClCompile Include="CrossPipe.cpp" />
+    <ClCompile Include="EmptyPipe.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="ImagePool.cpp" />
     <ClCompile Include="InformationWindow.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="baseTube.h" />
     <ClInclude Include="BentPipe.h" />
     <ClInclude Include="CrossPipe.h" />
+    <ClInclude Include="EmptyPipe.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImagePool.h" />
     <ClInclude Include="InformationWindow.h" />

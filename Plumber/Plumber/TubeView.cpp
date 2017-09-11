@@ -60,7 +60,7 @@ namespace Plumber
 				hWindow(),
 				IDC_STATIC_TUBE,
 				STM_SETIMAGE,
-				IMAGE_BITMAP,
+				IMAGE_ICON,
 				(LPARAM)_tube->GetImage()
 			);
 		}
