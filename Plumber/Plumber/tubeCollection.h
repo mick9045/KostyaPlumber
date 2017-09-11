@@ -15,8 +15,8 @@ namespace Plumber
 		int Height();
 		int Width();
 	private:
-		const int height = 6;
-		const int width = 11;
+		const int height = 5;
+		const int width = 10;
 		std::shared_ptr<BaseTube> ** field;
 	};
 }

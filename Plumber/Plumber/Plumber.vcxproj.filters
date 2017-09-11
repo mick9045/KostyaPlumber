@@ -72,6 +72,12 @@
     <ClCompile Include="EmptyPipe.cpp">
       <Filter>Source Files\tubeManagment</Filter>
     </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\tubeManagment</Filter>
+    </ClCompile>
     <ClCompile Include="user.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
