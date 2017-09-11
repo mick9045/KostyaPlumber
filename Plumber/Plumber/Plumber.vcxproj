@@ -159,6 +159,7 @@
     <ClCompile Include="StraightPipe.cpp" />
     <ClCompile Include="tubeCollection.cpp" />
     <ClCompile Include="TubeView.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
@@ -176,6 +177,7 @@
     <ClInclude Include="tubeCollection.h" />
     <ClInclude Include="TubeView.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plumber.rc" />
