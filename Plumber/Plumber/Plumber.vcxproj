@@ -154,11 +154,15 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="ImagePool.cpp" />
     <ClCompile Include="InformationWindow.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Record.cpp" />
     <ClCompile Include="StraightPipe.cpp" />
     <ClCompile Include="tubeCollection.cpp" />
     <ClCompile Include="TubeView.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
@@ -169,13 +173,17 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImagePool.h" />
     <ClInclude Include="InformationWindow.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelManager.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Pipes.h" />
+    <ClInclude Include="Record.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StraightPipe.h" />
     <ClInclude Include="tubeCollection.h" />
     <ClInclude Include="TubeView.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plumber.rc" />
