@@ -54,11 +54,6 @@ namespace Plumber
 		_hImage = hImage;
 	}
 
-	void BaseTube::UpdateImage()
-	{
-		SetImage(_imagePool.Get(_imageState));
-	}
-
 	PipeImage::PipeImage BaseTube::GetImageState()
 	{
 		return _imageState;

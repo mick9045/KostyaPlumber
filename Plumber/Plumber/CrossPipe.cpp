@@ -10,7 +10,7 @@ namespace Plumber
 		entrances.push_back({Direction::UP, Direction::DOWN});
 		entrances.push_back({Direction::LEFT, Direction::RIGHT});
 		SetImageState(PipeImage::CROSS);
-		UpdateImage();
+		SetImage(_imagePool.Get(GetImageState()));
 	}
 
 

@@ -30,7 +30,6 @@ namespace Plumber
 		void RotateEntrances();
 		Direction::Direction GetDirection(Direction::Direction direction);
 		void SetImage(HICON hImage);
-		void UpdateImage();
 		static ImagePool _imagePool;
 		PipeImage::PipeImage GetImageState();
 		void SetImageState(PipeImage::PipeImage image);
