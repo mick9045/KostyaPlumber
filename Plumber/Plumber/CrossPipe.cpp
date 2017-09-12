@@ -7,8 +7,8 @@ namespace Plumber
 	{
 		_filledHor = false;
 		_filledVer = false;
-		entrances[Direction::UP] = entrances[Direction::DOWN];
-		entrances[Direction::RIGHT] = entrances[Direction::LEFT];
+		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::UP, Direction::DOWN));
+		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::LEFT, Direction::RIGHT));
 	}
 
 
