@@ -108,7 +108,8 @@ namespace Plumber
 			default:
 				break;
 			}
-
+			if (curI < 0 || curI >= HEIGHT || curJ < 0 || curJ >= WIDTH)
+				return false;
 		}
 	}
 
