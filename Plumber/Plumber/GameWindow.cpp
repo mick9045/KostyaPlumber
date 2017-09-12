@@ -40,17 +40,27 @@ namespace Plumber
 		Level level = _levelManager.GetLevel(1);
 		
 
-		//for (int i = 0; i < 4; i++)
-		//{
-		//	for (int j = 0; j < 4; j++)
-		//	{
-		//		_tubeViewArr[j][i].Create(hWindow());
-		//		//_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
-		//		_tubeViewArr[j][i].SetTube(std::shared_ptr<BaseTube>(level.GetCollection().getTube(j, i)));
-		//		_tubeViewArr[j][i].SetPos(i * 100 + 12, j * 100);
-		//		
-		//	}
-		//}
+		for (int y = 0; y < 7; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				_tubeViewArr[y][x].Create(hWindow());
+			}
+		}
+
+		auto collection = level.GetCollection();
+		
+		for (int y = 1; y < 5; y++)
+		{
+			for (int x = 0; x < 9; x++)
+			{
+				
+				//_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
+				_tubeViewArr[y][x].SetTube(collection.getTube(y, x));
+				_tubeViewArr[y][x].SetPos(x * 100, (y * 100) - 100);
+				
+			}
+		}
 
 		
 

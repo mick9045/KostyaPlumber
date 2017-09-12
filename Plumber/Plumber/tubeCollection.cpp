@@ -65,7 +65,7 @@ namespace Plumber
 		{
 			for (int j = 0; j < WIDTH; j++)
 			{
-				field[i][j] = field[i][j];
+				field[i][j] = tubeCollection.field[i][j];
 			}
 		}
 	}
@@ -82,7 +82,7 @@ namespace Plumber
 		{
 			for (int j = 0; j < WIDTH; j++)
 			{
-				field[i][j] = field[i][j];
+				field[i][j] = tubeCollection.field[i][j];
 			}
 		}
 		return *this;
@@ -170,7 +170,7 @@ namespace Plumber
 		if (widthIndex >= WIDTH || widthIndex < 0)
 			throw std::out_of_range("Out of range by height");
 
-		return field[HEIGHT][WIDTH];
+		return field[heightIndex][widthIndex];
 	}
 
 	inline void TubeCollection::AllocateField()

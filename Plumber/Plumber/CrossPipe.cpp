@@ -7,8 +7,10 @@ namespace Plumber
 	{
 		_filledHor = false;
 		_filledVer = false;
-		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::UP, Direction::DOWN));
-		entrances.push_back(std::pair<Direction::Direction, Direction::Direction>(Direction::LEFT, Direction::RIGHT));
+		entrances.push_back({Direction::UP, Direction::DOWN});
+		entrances.push_back({Direction::LEFT, Direction::RIGHT});
+		SetImageState(PipeImage::CROSS);
+		UpdateImage();
 	}
 
 

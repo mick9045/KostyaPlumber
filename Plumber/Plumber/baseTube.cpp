@@ -47,10 +47,18 @@ namespace Plumber
 		}
 		return Direction::NON;
 	}
+
+
 	void BaseTube::SetImage(HICON hImage)
 	{
 		_hImage = hImage;
 	}
+
+	void BaseTube::UpdateImage()
+	{
+		SetImage(_imagePool.Get(_imageState));
+	}
+
 	PipeImage::PipeImage BaseTube::GetImageState()
 	{
 		return _imageState;
