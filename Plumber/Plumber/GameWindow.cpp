@@ -45,7 +45,7 @@ namespace Plumber
 			for (int x = 0; x < 10; x++)
 			{
 				_tubeViewArr[y][x].Create(hWindow());
-				_tubeViewArr[y][x].SetPos(x * 100, (y * 100) + 2);
+				_tubeViewArr[y][x].SetPos(x * 100, (y * 100));
 			}
 		}
 
