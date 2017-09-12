@@ -37,7 +37,7 @@ namespace Plumber
 	BOOL Plumber::GameWindow::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 	{
 		SetSize(1024, 740);
-		//Level level = _levelManager.GetLevel(0);
+		Level level = _levelManager.GetLevel(1);
 		
 
 		//for (int i = 0; i < 4; i++)

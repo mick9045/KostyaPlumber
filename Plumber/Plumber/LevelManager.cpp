@@ -27,7 +27,7 @@ namespace Plumber {
 
 	Level LevelManager::GetLevel(int level)
 	{
-		if (level < 1 || level > Count() - 1)
+		if (level < 1 || level > Count())
 			throw std::out_of_range("Out of range");
 		
 		return _levels[level - 1];
