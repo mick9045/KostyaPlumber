@@ -53,6 +53,7 @@ namespace Plumber
 				gameWindow->CreateModal();
 				delete gameWindow;
 			}
+			break;
 			case IDC_EXIT:
 			{
 				Close();
@@ -64,6 +65,7 @@ namespace Plumber
 				informationWindow->CreateModal();
 				delete informationWindow;
 			}
+			break;
 
 			default:
 				break;

@@ -37,25 +37,23 @@ namespace Plumber
 	BOOL Plumber::GameWindow::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 	{
 		SetSize(1024, 740);
-		/*std::shared_ptr<BaseTube> tube = std::make_shared<StraightPipe>();
-		TubeView *tubeView = new TubeView();
-		tubeView->Create(hWindow());
-		tubeView->SetTube(tube);
-		std::shared_ptr<BaseTube> tube2 = std::make_shared<StraightPipe>();
-		TubeView *tubeView2 = new TubeView();
-		tubeView2->Create(hWindow());
-		tubeView2->SetTube(tube2);
-		tubeView2->SetPos(100, 0);*/
-		for (int i = 0; i < 10; i++)
-		{
-			for (int j = 0; j < 7; j++)
-			{
-				_tubeViewArr[j][i].Create(hWindow());
-				_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
-				_tubeViewArr[j][i].SetPos(i * 100 + 12, j * 100);
-				
-			}
-		}
+		//Level level = _levelManager.GetLevel(0);
+		
+
+		//for (int i = 0; i < 4; i++)
+		//{
+		//	for (int j = 0; j < 4; j++)
+		//	{
+		//		_tubeViewArr[j][i].Create(hWindow());
+		//		//_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
+		//		_tubeViewArr[j][i].SetTube(std::shared_ptr<BaseTube>(level.GetCollection().getTube(j, i)));
+		//		_tubeViewArr[j][i].SetPos(i * 100 + 12, j * 100);
+		//		
+		//	}
+		//}
+
+		
+
 		return FALSE;
 	}
 

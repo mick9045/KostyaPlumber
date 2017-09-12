@@ -7,9 +7,10 @@ namespace Plumber
 
 	TubeCollection::TubeCollection()
 	{
-		field = new std::shared_ptr<BaseTube> *[HEIGHT];
+		/*field = new std::shared_ptr<BaseTube> *[HEIGHT];
 		for (int i = 0; i < HEIGHT; i++)
-			field[i] = new std::shared_ptr<BaseTube>[WIDTH];
+			field[i] = new std::shared_ptr<BaseTube>[WIDTH];*/
+		AllocateField();
 	}
 
 	TubeCollection::TubeCollection(int intField[HEIGHT][WIDTH]) :TubeCollection()
@@ -56,6 +57,44 @@ namespace Plumber
 				}
 			}
 	}
+
+	TubeCollection::TubeCollection(const TubeCollection & tubeCollection)
+	{
+		AllocateField();
+		for (int i = 0; i < HEIGHT; i++)
+		{
+			for (int j = 0; j < WIDTH; j++)
+			{
+				field[i][j] = field[i][j];
+			}
+		}
+	}
+
+	TubeCollection::TubeCollection(TubeCollection && tubeCollection)
+	{
+		field = tubeCollection.field;
+		tubeCollection.field = nullptr;
+	}
+
+	TubeCollection & TubeCollection::operator=(const TubeCollection & tubeCollection)
+	{
+		for (int i = 0; i < HEIGHT; i++)
+		{
+			for (int j = 0; j < WIDTH; j++)
+			{
+				field[i][j] = field[i][j];
+			}
+		}
+		return *this;
+	}
+
+	TubeCollection & TubeCollection::operator=(TubeCollection && tubeCollection)
+	{
+		ReleaseField();
+		field = tubeCollection.field;
+		tubeCollection.field = nullptr;
+		return *this;
+	}
 /*
 	TubeCollection::TubeCollection(const TubeCollection & object) 
 	{
@@ -73,10 +112,12 @@ namespace Plumber
 
 	TubeCollection::~TubeCollection()
 	{
-		for (int i = 0; i < HEIGHT; i++)
+		/*for (int i = 0; i < HEIGHT; i++)
 		{
 			delete[] field[i];
 		}
+		delete[] field;*/
+		ReleaseField();
 	}
 
 	bool TubeCollection::startWater()
@@ -131,5 +172,29 @@ namespace Plumber
 
 		return field[HEIGHT][WIDTH];
 	}
+
+	inline void TubeCollection::AllocateField()
+	{
+		field = new std::shared_ptr<BaseTube> *[HEIGHT];
+		for (int i = 0; i < HEIGHT; i++)
+		{
+			field[i] = new std::shared_ptr<BaseTube>[WIDTH];
+		}
+	}
+
+	inline void TubeCollection::ReleaseField()
+	{
+		if (field != nullptr)
+		{
+			for (int i = 0; i < HEIGHT; i++)
+			{
+				delete[] field[i];
+			}
+
+			delete[] field;
+			field = nullptr;
+		}
+	}
+
 
 }

@@ -12,6 +12,11 @@ namespace Plumber
 	public:
 		TubeCollection();
 		TubeCollection(int intField[HEIGHT][WIDTH] );
+		TubeCollection(const TubeCollection & tubeCollection);
+		TubeCollection(TubeCollection && tubeCollection);
+		
+		TubeCollection & operator=(const TubeCollection & tubeCollection);
+		TubeCollection & operator=(TubeCollection && tubeCollection);
 	//	TubeCollection(const TubeCollection & object);
 		~TubeCollection();
 		bool startWater();
@@ -20,5 +25,7 @@ namespace Plumber
 		
 	private:	
 		std::shared_ptr<BaseTube> ** field;
+		inline void AllocateField();
+		inline void ReleaseField();
 	};
 }
