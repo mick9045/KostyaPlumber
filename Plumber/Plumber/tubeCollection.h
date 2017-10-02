@@ -7,6 +7,16 @@
 namespace Plumber
 {
 
+	namespace Answer
+	{
+		enum Answer
+		{
+			FINISH, 
+			CONTINUE,
+			LEAK
+		};
+	}
+
 	class TubeCollection
 	{
 	public:
@@ -19,7 +29,7 @@ namespace Plumber
 		TubeCollection & operator=(TubeCollection && tubeCollection);
 	//	TubeCollection(const TubeCollection & object);
 		~TubeCollection();
-		bool startWater();
+		Answer::Answer startWater();
 		void addTube(int heightIndex, int widthIndex, std::shared_ptr<BaseTube> tube);
 	    std::shared_ptr<BaseTube> getTube(int heightIndex, int widthIndex);
 		

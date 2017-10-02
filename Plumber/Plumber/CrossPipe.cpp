@@ -20,7 +20,7 @@ namespace Plumber
 
 	Direction::Direction CrossPipe::RunWater(Direction::Direction direction)
 	{
-		if (_filledHor || _filledVer || direction == Direction::NON)
+		if ( direction == Direction::NON)
 		{
 			return Direction::NON;
 		}
@@ -65,5 +65,13 @@ namespace Plumber
 
 	void CrossPipe::Rotate(int count)
 	{
+	}
+	void CrossPipe::unWater()
+	{
+		SetImageState(PipeImage::CROSS);
+		SetImage(_imagePool.Get(GetImageState()));
+		setFilled(false);
+		_filledHor = false;
+		_filledVer = false;
 	}
 }

@@ -38,4 +38,13 @@ namespace Plumber
 		}
 		SetImage(_imagePool.Get(GetImageState()));
 	}
+	void BentPipe::unWater()
+	{
+		if (IsFilled())
+		{
+			setFilled(false);
+			SetImageState(PipeImage::PipeImage(GetImageState() - 4));
+			SetImage(_imagePool.Get(GetImageState()));
+		}
+	}
 }

@@ -17,4 +17,8 @@ namespace Plumber
 	void EmptyPipe::Rotate(int count)
 	{
 	}
+	void EmptyPipe::unWater()
+	{
+		
+	}
 }

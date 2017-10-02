@@ -120,18 +120,28 @@ namespace Plumber
 		ReleaseField();
 	}
 
-	bool TubeCollection::startWater()
+	Answer::Answer TubeCollection::startWater()
 	{
-		Direction::Direction waterOut = Direction::UP;
-		int curI = 0;
-		int curJ = 0;
-		while (true)
-		{
+		static Direction::Direction waterOut = Direction::UP;
+		static int curI = 0;
+		static int curJ = 0;
+	
 			waterOut = field[curI][curJ]->RunWater(waterOut);
 			if (waterOut == Direction::NON)
-				return false;
+			{
+				waterOut = Direction::UP;
+				curI = 0;
+				curJ = 0;
+				return Answer::LEAK;
+			}
 			else if (curI == HEIGHT - 1 && curJ == WIDTH - 1 && waterOut == Direction::DOWN)
-				return true;
+			{
+				waterOut = Direction::UP;
+				curI = 0;
+				curJ = 0;
+				return  Answer::FINISH;
+			}
+
 			switch (waterOut)
 			{
 			case Direction::DOWN:
@@ -150,8 +160,12 @@ namespace Plumber
 				break;
 			}
 			if (curI < 0 || curI >= HEIGHT || curJ < 0 || curJ >= WIDTH)
-				return false;
-
+			{
+				waterOut = Direction::UP;
+				curI = 0;
+				curJ = 0;
+				return Answer::LEAK;
+			}
 			if (waterOut == Direction::UP)
 				waterOut = Direction::DOWN;
 			else
@@ -164,7 +178,7 @@ namespace Plumber
 			if (waterOut == Direction::LEFT)
 				waterOut = Direction::RIGHT;
 
-		}
+			return Answer::CONTINUE;
 	}
 
 	void TubeCollection::addTube(int heightIndex, int widthIndex, std::shared_ptr<BaseTube> tube)

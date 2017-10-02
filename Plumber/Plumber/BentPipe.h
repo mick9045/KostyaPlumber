@@ -12,5 +12,6 @@ namespace Plumber
 
 		Direction::Direction RunWater(Direction::Direction direction);
 		virtual void Rotate(int count = 1);
+		virtual void unWater();
 	};
 }

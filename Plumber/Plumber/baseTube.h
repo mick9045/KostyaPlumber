@@ -25,6 +25,7 @@ namespace Plumber
 		virtual Direction::Direction RunWater(Direction::Direction direction) = 0;
 		virtual HICON GetImage();
 		virtual void Rotate(int count = 1) = 0;
+		virtual void unWater() = 0;
 	protected:
 		std::vector< std::pair<Direction::Direction, Direction::Direction> > entrances;
 		void RotateEntrances();

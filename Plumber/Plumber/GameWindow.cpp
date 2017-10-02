@@ -82,6 +82,7 @@ namespace Plumber
 		return _hbrBackground;
 	}
 
+	
 
 	VOID GameWindow::Cls_OnCommand(HWND hwnd, INT id, HWND hwndCtl, UINT codeNotify)
 	{
@@ -91,16 +92,12 @@ namespace Plumber
 			{
 			case IDC_BUTTON_START:
 			{
-				if (_levelManager.GetLevel(_levelCount).GetCollection().startWater())
-					MessageBox(hwnd, TEXT("Уровень пройден"), TEXT("Победа!"), MB_OK);
-				else
-					MessageBox(hwnd, TEXT("Неудача"), TEXT("Поражение"), MB_OK);
-				for (int y = 0; y < 5; y++)
-				{
-					for (int x = 0; x < 10; x++)
-					{
-						_tubeViewArr[y][x].UpdateImage();
-					}
+				if (!checking) {
+					SetTimer(hwnd,             // handle to main window 
+						IDT_TIMER1,            // timer identifier 
+						800,                 // 1-second interval 
+						(TIMERPROC)NULL);
+					checking = true;
 				}
 			}
 			break;
@@ -110,6 +107,45 @@ namespace Plumber
 			}
 		}
 	}
+
+	void GameWindow::Cls_OnTimer(HWND hwnd, UINT id)
+	{
+		Answer::Answer result = _levelManager.GetLevel(_levelCount).GetCollection().startWater();
+		updateAll();
+		switch (result)
+		{
+		case Answer::CONTINUE:
+			break;
+
+		case Answer::FINISH:
+			KillTimer(hwnd, IDT_TIMER1);
+			checking = false;
+			if (_levelCount < 3)
+			{
+				MessageBox(hwnd, TEXT("Уровень пройден"), TEXT(":)"), MB_OK);
+				_levelCount++;
+				refield();
+			}
+			else if (_levelCount == 3)
+			{
+				MessageBox(hwnd, TEXT("Победа"), TEXT(":)"), MB_OK);
+				_levelCount = 1;
+				Close();
+			}
+			
+			break;
+
+		case Answer::LEAK:
+			KillTimer(hwnd, IDT_TIMER1);
+			checking = false;
+			MessageBox(hwnd, TEXT("Поражение"), TEXT(":("), MB_OK);
+			unWaterAll();
+			break;
+		 }
+		
+	}
+
+	
 	INT_PTR GameWindow::DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		switch (uMsg)
@@ -118,10 +154,44 @@ namespace Plumber
 			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
 			HANDLE_MSG(hwnd, WM_CTLCOLORDLG, Cls_OnCtlColor);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
+			HANDLE_MSG(hwnd, WM_TIMER, Cls_OnTimer);
 		}
 		return false;
 	}
 
+	void GameWindow::updateAll()
+	{
+		for (int y = 0; y < 5; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				_tubeViewArr[y][x].UpdateImage();
+			}
+		}
+	}
 
+	void GameWindow::unWaterAll()
+	{
+		Level level = _levelManager.GetLevel(_levelCount);
+		for (int y = 0; y < 5; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				level.GetCollection().getTube(y, x)->unWater();
+			}
+		}
+		updateAll();
+	}
+	void GameWindow::refield()
+	{
+		Level level = _levelManager.GetLevel(_levelCount);
+		for (int y = 0; y < 5; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				_tubeViewArr[y][x].SetTube(level.GetCollection().getTube(y, x));
+			}
+		}
+	}
 
 }

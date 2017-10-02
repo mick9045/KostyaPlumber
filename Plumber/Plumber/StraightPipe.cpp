@@ -38,4 +38,13 @@ namespace Plumber
 		}
 		SetImage(_imagePool.Get(GetImageState()));
 	}
+	void StraightPipe::unWater()
+	{
+		if(IsFilled())
+		{
+			SetImageState(PipeImage::PipeImage(GetImageState() + 2));
+			SetImage(_imagePool.Get(GetImageState()));
+			setFilled(false);
+		}
+	}
 }

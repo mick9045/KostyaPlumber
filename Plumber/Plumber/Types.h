@@ -11,3 +11,5 @@ typedef std::string tString;
 typedef std::wstring tString;
 #define to_tstring std::to_wstring
 #endif
+
+#define IDT_TIMER1 USER_TIMER_MINIMUM + 1
