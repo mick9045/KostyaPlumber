@@ -58,7 +58,7 @@ namespace Plumber
 			{
 				
 				//_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
-				_tubeViewArr[y][x].SetTube(collection.getTube(y, x));
+				_tubeViewArr[y + 1][x].SetTube(collection.getTube(y, x));
 				
 			}
 		}
