@@ -95,7 +95,7 @@ namespace Plumber
 				if (!checking) {
 					SetTimer(hwnd,             // handle to main window 
 						IDT_TIMER1,            // timer identifier 
-						800,                 // 1-second interval 
+						400,                 // 1-second interval 
 						(TIMERPROC)NULL);
 					checking = true;
 				}

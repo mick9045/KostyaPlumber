@@ -42,7 +42,7 @@ namespace Plumber
 	{
 		if(IsFilled())
 		{
-			SetImageState(PipeImage::PipeImage(GetImageState() + 2));
+			SetImageState(PipeImage::PipeImage(GetImageState() - 2));
 			SetImage(_imagePool.Get(GetImageState()));
 			setFilled(false);
 		}
