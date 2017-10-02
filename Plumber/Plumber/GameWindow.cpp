@@ -37,7 +37,7 @@ namespace Plumber
 	BOOL Plumber::GameWindow::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 	{
 		SetSize(1024, 740);
-		Level level = _levelManager.GetLevel(1);
+		Level level = _levelManager.GetLevel(_levelCount);
 		
 		
 		for (int y = 0; y < 5; y++)
@@ -82,6 +82,34 @@ namespace Plumber
 		return _hbrBackground;
 	}
 
+
+	VOID GameWindow::Cls_OnCommand(HWND hwnd, INT id, HWND hwndCtl, UINT codeNotify)
+	{
+		if (codeNotify == BN_CLICKED)
+		{
+			switch (id)
+			{
+			case IDC_BUTTON_START:
+			{
+				if (_levelManager.GetLevel(_levelCount).GetCollection().startWater())
+					MessageBox(hwnd, TEXT("Уровень пройден"), TEXT("Победа!"), MB_OK);
+				else
+					MessageBox(hwnd, TEXT("Неудача"), TEXT("Поражение"), MB_OK);
+				for (int y = 0; y < 5; y++)
+				{
+					for (int x = 0; x < 10; x++)
+					{
+						_tubeViewArr[y][x].UpdateImage();
+					}
+				}
+			}
+			break;
+
+			default:
+				break;
+			}
+		}
+	}
 	INT_PTR GameWindow::DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		switch (uMsg)
@@ -89,6 +117,7 @@ namespace Plumber
 			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);
 			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
 			HANDLE_MSG(hwnd, WM_CTLCOLORDLG, Cls_OnCtlColor);
+			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
 		}
 		return false;
 	}

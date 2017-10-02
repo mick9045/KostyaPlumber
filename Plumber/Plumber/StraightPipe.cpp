@@ -17,11 +17,11 @@ namespace Plumber
 	Direction::Direction StraightPipe::RunWater(Direction::Direction direction)
 	{
 		auto waterOut = GetDirection(direction);
-
-		SetImageState(PipeImage::PipeImage(GetImageState() + 2));
-		SetImage(_imagePool.Get(GetImageState()));
-		if (waterOut != Direction::NON)
+		if (waterOut != Direction::NON) {
+			SetImageState(PipeImage::PipeImage(GetImageState() + 2));
+			SetImage(_imagePool.Get(GetImageState()));
 			setFilled(true);
+		}
 		return waterOut;
 	}
 	void StraightPipe::Rotate(int count)

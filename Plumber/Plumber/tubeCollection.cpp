@@ -151,6 +151,19 @@ namespace Plumber
 			}
 			if (curI < 0 || curI >= HEIGHT || curJ < 0 || curJ >= WIDTH)
 				return false;
+
+			if (waterOut == Direction::UP)
+				waterOut = Direction::DOWN;
+			else
+			if (waterOut == Direction::DOWN)
+				waterOut = Direction::UP;
+			else
+			if (waterOut == Direction::RIGHT)
+				waterOut = Direction::LEFT;
+			else
+			if (waterOut == Direction::LEFT)
+				waterOut = Direction::RIGHT;
+
 		}
 	}
 

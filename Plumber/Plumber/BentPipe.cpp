@@ -15,11 +15,14 @@ namespace Plumber
 	{
 		auto waterOut = GetDirection(direction);
 
-		SetImageState(PipeImage::PipeImage(GetImageState() + 4));
-		SetImage(_imagePool.Get(GetImageState()));
+
 		if (waterOut != Direction::NON)
+		{
 			setFilled(true);
-		return waterOut;
+			SetImageState(PipeImage::PipeImage(GetImageState() + 4));
+			SetImage(_imagePool.Get(GetImageState()));
+		}
+			return waterOut;
 	}
 	void BentPipe::Rotate(int count)
 	{

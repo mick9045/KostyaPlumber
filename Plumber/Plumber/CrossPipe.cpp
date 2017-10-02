@@ -34,11 +34,13 @@ namespace Plumber
 				if (_filledHor == false)
 				{
 					SetImageState(PipeImage::CROSS_FILLED_VER);
+					SetImage(_imagePool.Get(GetImageState()));
 					_filledVer = true;
 				}
 				else
 				{
 					SetImageState(PipeImage::CROSS_FILLED);
+					SetImage(_imagePool.Get(GetImageState()));
 				}
 				setFilled(true);
 			}
@@ -47,11 +49,13 @@ namespace Plumber
 				if (_filledVer == false)
 				{
 					SetImageState(PipeImage::CROSS_FILLED_HOR);
+					SetImage(_imagePool.Get(GetImageState()));
 					_filledHor = true;
 				}
 				else
 				{
 					SetImageState(PipeImage::CROSS_FILLED);
+					SetImage(_imagePool.Get(GetImageState()));
 				}
 				setFilled(true);
 			}
