@@ -5,16 +5,16 @@ namespace Plumber
 {
 	EmptyPipe::EmptyPipe()
 	{
-		SetImage(NULL);
+		SetImageState(PipeImage::STRAIGHT_VER);
+		SetImage(_imagePool.Get(GetImageState()));
 	}
 
 	Direction::Direction EmptyPipe::RunWater(Direction::Direction direction)
 	{
-		return Direction::Direction();
+		return Direction::NON;
 	}
 
 	void EmptyPipe::Rotate(int count)
 	{
-
 	}
 }

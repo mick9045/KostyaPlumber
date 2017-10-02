@@ -39,27 +39,36 @@ namespace Plumber
 		SetSize(1024, 740);
 		Level level = _levelManager.GetLevel(1);
 		
-
-		for (int y = 0; y < 7; y++)
-		{
-			for (int x = 0; x < 10; x++)
-			{
-				_tubeViewArr[y][x].Create(hWindow());
-				_tubeViewArr[y][x].SetPos(x * 100, (y * 100));
-			}
-		}
-
-		auto collection = level.GetCollection();
-		
 		
 		for (int y = 0; y < 5; y++)
 		{
 			for (int x = 0; x < 10; x++)
 			{
-				
-				//_tubeViewArr[j][i].SetTube(std::shared_ptr<StraightPipe>(new StraightPipe()));
+				_tubeViewArr[y][x].Create(hWindow());
+				_tubeViewArr[y][x].SetPos(x * 100, ((y + 1) * 100));
+			}
+		}
+
+		TubeCollection collection = level.GetCollection();
+		TubeView * tubeView = new TubeView();
+
+		auto startPipe = new StraightPipe();
+		_startTube.Create(hWindow());
+		_endTube.Create(hWindow());
+		_endTube.SetPos(100 * 9, 100 * 6);
+		_startTube.SetTube(std::shared_ptr<BaseTube>(new EmptyPipe()));
+		_endTube.SetTube(std::shared_ptr<BaseTube>(new EmptyPipe()));
+		/*auto startPipe = new StraightPipe();
+		_tubeViewArr[0][0].SetTube(std::shared_ptr<BaseTube>(startPipe));
+		auto endPipe = new StraightPipe();
+		_tubeViewArr[6][9].SetTube(std::shared_ptr<BaseTube>(endPipe));*/
+
+		
+		for (int y = 0; y < 5; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
 				_tubeViewArr[y][x].SetTube(collection.getTube(y, x));
-				
 			}
 		}
 

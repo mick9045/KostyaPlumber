@@ -17,7 +17,9 @@ namespace Plumber
 		HBRUSH Cls_OnCtlColor(HWND hwnd, HDC hdc, HWND hwndChild, int type);
 	private:
 		HBRUSH _hbrBackground;
-		TubeView _tubeViewArr[7][10];
+		TubeView _tubeViewArr[5][10];
+		TubeView _startTube;
+		TubeView _endTube;
 		LevelManager _levelManager;
 
 		// Inherited via BaseDialogWindow
