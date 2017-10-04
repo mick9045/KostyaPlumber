@@ -49,8 +49,10 @@ namespace Plumber
 			{
 			case IDC_PLAY:
 			{
+				ShowWindow(hWindow(), SW_SHOWMINIMIZED);
 				GameWindow * gameWindow = new GameWindow();
-				gameWindow->CreateModal();
+				gameWindow->CreateModal(hWindow());
+				ShowWindow(hWindow(), SW_RESTORE);
 				delete gameWindow;
 			}
 			break;
@@ -62,7 +64,7 @@ namespace Plumber
 			case IDC_INFORMATION:
 			{
 				InformationWindow * informationWindow = new InformationWindow();
-				informationWindow->CreateModal();
+				informationWindow->CreateModal(hWindow());
 				delete informationWindow;
 			}
 			break;
