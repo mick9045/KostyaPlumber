@@ -26,6 +26,7 @@ namespace Plumber
 		{
 			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
+		
 			//HANDLE_MSG(hwnd, WM_)
 
 		}
