@@ -38,7 +38,7 @@ namespace Plumber
 	{
 		SetSize(1024, 740);
 		Level level = _levelManager.GetLevel(_levelCount);
-		
+		SetWindowText(hwnd, TEXT("Уровень 1"));
 		
 		for (int y = 0; y < 5; y++)
 		{
@@ -111,7 +111,7 @@ namespace Plumber
 	void GameWindow::Cls_OnTimer(HWND hwnd, UINT id)
 	{
 		Answer::Answer result = _levelManager.GetLevel(_levelCount).GetCollection().startWater();
-		updateAll();
+		updateAllWatered();
 		switch (result)
 		{
 		case Answer::CONTINUE:
@@ -170,6 +170,20 @@ namespace Plumber
 		}
 	}
 
+	void GameWindow::updateAllWatered()
+	{
+
+		for (int y = 0; y < 5; y++)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				auto tube = _levelManager.GetLevel(_levelCount).GetCollection().getTube(y,x);
+				if(tube->IsFilled())
+				_tubeViewArr[y][x].UpdateImage();
+			}
+		}
+	}
+
 	void GameWindow::unWaterAll()
 	{
 		Level level = _levelManager.GetLevel(_levelCount);
@@ -184,6 +198,9 @@ namespace Plumber
 	}
 	void GameWindow::refield()
 	{
+		tString text = TEXT("Уровень ");
+		text+= to_tstring(_levelCount);
+		SetWindowText(_hwnd, text.c_str());
 		Level level = _levelManager.GetLevel(_levelCount);
 		for (int y = 0; y < 5; y++)
 		{

@@ -27,6 +27,7 @@ namespace Plumber
 		// Inherited via BaseDialogWindow
 		virtual INT_PTR DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) override;
 		void updateAll();
+		void updateAllWatered();
 		bool checking = false;
 		void unWaterAll();
 		void refield();
